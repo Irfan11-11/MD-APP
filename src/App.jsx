@@ -8,9 +8,8 @@ function App() {
   return (
 <>
         <Routes>
-          <Route path='/' element={<Dashboard/>}/>
-          <Route path='/login' element={<Auth/>}/>
-          <Route path='/register' element={<Auth insideRegister/>}/> 
+          <Route path='/' element={<Auth insideRegister/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}/> 
           <Route path='/*' element={<Navigate to={'/'}/>}/>
         </Routes>
 </>    

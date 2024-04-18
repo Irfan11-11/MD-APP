@@ -69,7 +69,7 @@ function Dashboard() {
 
           </tbody>
           <div>
-            <Link to={'/login'} style={{ textDecoration: 'none' }} className='fw-bolder btn btn-primary'>Back</Link>
+            <Link to={'/'} style={{ textDecoration: 'none' }} className='fw-bolder btn btn-primary'>Back</Link>
           </div>
         </table>
       </div>

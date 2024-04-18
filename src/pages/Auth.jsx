@@ -30,10 +30,10 @@ function Auth({ insideRegister }) {
         const result = await registerAPI(userInputs)
         console.log(result);
         if (result.status == 200) {
-          toast.success(`Welcome ${result.data.firstname}... Please login to explore our website!!!`)
+          toast.success(`Welcome ${result.data.firstname}...`)
           setUserInputs({ firstname: "", lastname: "",adress: "",gender: "",course: "",dob: "",mobile: "", email: "", password: "" })
           setTimeout(() => {
-            navigate('/login')
+            navigate('/dashboard')
           }, 2000);
         } else {
           toast.error(result.response.data)
@@ -63,7 +63,7 @@ function Auth({ insideRegister }) {
           toast.success(`Welcome ${result.data.existingUser.firstname}...`)
           setUserInputs({ email: "", password: "" })
           setTimeout(() => {
-            navigate('/')
+            navigate('/dashboard')
           }, 2000);
         } else {
           toast.error(result.response.data)
@@ -203,12 +203,10 @@ const handleCancel =()=>{
                     <div className='mt-1'>
                       <button onClick={handleRegister} className='btn btn-primary'>Register</button>
                       <button onClick={handleCancel} className='btn btn-light ms-2'>Cancel</button>
-                      <p>Already have Account? Click here to <Link className='text-info' to={'/login'}>Login</Link></p>
                     </div>
                     :
                     <div className='mt-1'>
                       <button onClick={handleLogin} className='btn btn-primary'>Login</button>
-                      <p>New User? Click here to <Link className='text-info' to={'/register'}>Register</Link></p>
                     </div>
 
                 }
